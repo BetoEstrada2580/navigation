@@ -4,7 +4,7 @@ import React from 'react';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, useWindowDimensions, View, TouchableOpacity } from 'react-native';
 import { appStyles } from '../theme/appTheme';
-import { BottomTabs } from './BottomTabs';
+import { BottomTabs, Tabs } from './BottomTabs';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,12 +18,11 @@ export const SideBarMenuAlter = () => {
             }}
             drawerContent={(props)=> <MenuInterno {...props} /> }
         >
-            <Drawer.Screen name="BottomTabs" options={{headerShown:true}} component={BottomTabs} />
+            <Drawer.Screen name="BottomTabs" options={{headerShown:true}} component={Tabs} />
             <Drawer.Screen name="SettingsScreen" options={{headerShown:true}} component={SettingsScreen} />
         </Drawer.Navigator>
     );
 };
-
 
 export const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
     return (
