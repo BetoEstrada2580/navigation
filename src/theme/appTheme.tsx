@@ -21,4 +21,25 @@ export const appStyles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
     },
+    avatarContainer:{
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    avatar:{
+        height: 150,
+        width: 150,
+        borderRadius: 100,
+    },
+    menuContainer: {
+        marginVertical: 30,
+        marginHorizontal: 20,
+        gap: 10,
+    },
+    menuBtn:{
+
+    },
+    menuText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
 });

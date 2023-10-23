@@ -22,7 +22,11 @@ export const PersonaScreen = ({route,navigation}: Props) => {
 
     return (
         <View style={appStyles.globalMargin}>
-            <Text style={appStyles.title}>PersonaScreen</Text>
+            <Text style={appStyles.title}>
+                    {
+                        JSON.stringify(params, null, 3)
+                    }
+                </Text>
         </View>
     );
 };
