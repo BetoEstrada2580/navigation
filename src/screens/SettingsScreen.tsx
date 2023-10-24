@@ -7,5 +7,5 @@ export const SettingsScreen = () => {
     <View style={appStyles.globalMargin}>
         <Text style= {appStyles.title}>SettingsScreen</Text>
     </View>
-  )
-}
+  );
+};

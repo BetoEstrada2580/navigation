@@ -40,7 +40,8 @@ export const appStyles = StyleSheet.create({
         gap: 10,
     },
     menuBtn:{
-
+        flexDirection: 'row',
+        alignItems: 'center',
     },
     menuText: {
         fontSize: 20,

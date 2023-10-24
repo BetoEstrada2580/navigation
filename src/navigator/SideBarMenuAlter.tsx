@@ -1,10 +1,10 @@
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView  } from '@react-navigation/drawer';
-import { StackNavigator } from './StackNavigator';
 import React from 'react';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, useWindowDimensions, View, TouchableOpacity } from 'react-native';
 import { appStyles } from '../theme/appTheme';
-import { BottomTabs, Tabs } from './BottomTabs';
+import { Tabs } from './BottomTabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,8 +18,8 @@ export const SideBarMenuAlter = () => {
             }}
             drawerContent={(props)=> <MenuInterno {...props} /> }
         >
-            <Drawer.Screen name="BottomTabs" options={{headerShown:true}} component={Tabs} />
-            <Drawer.Screen name="SettingsScreen" options={{headerShown:true}} component={SettingsScreen} />
+            <Drawer.Screen name="BottomTabs" options={{headerShown:false}} component={Tabs} />
+            <Drawer.Screen name="SettingsScreen" options={{headerShown:false}} component={SettingsScreen} />
         </Drawer.Navigator>
     );
 };
@@ -37,11 +37,13 @@ export const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
             </View>
             {/* Opciones de menú */}
             <View style={appStyles.menuContainer}>
-                <TouchableOpacity onPress={()=> navigation.navigate('BottomTabs') } >
-                    <Text style={appStyles.menuText} >Navegación</Text>
+                <TouchableOpacity style={appStyles.menuBtn} onPress={()=> navigation.navigate('BottomTabs') } >
+                    <Icon name="compass-outline" size={23} color={'black'} />
+                    <Text style={appStyles.menuText} > Navegación</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=> navigation.navigate('SettingsScreen') } >
-                    <Text style={appStyles.menuText} >Ajustes</Text>
+                <TouchableOpacity style={appStyles.menuBtn} onPress={()=> navigation.navigate('SettingsScreen') } >
+                    <Icon name="cog-outline" size={23} color={'black'} />
+                    <Text style={appStyles.menuText} > Ajustes</Text>
                 </TouchableOpacity>
             </View>
         </DrawerContentScrollView>
